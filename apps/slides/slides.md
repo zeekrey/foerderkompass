@@ -95,7 +95,7 @@ class: text-center
 
 ---
 layout: image-right
-image: https://cover.sli.dev
+image: /buergergeld-screenshot.jpg
 ---
 
 # Über mich

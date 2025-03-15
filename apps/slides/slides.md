@@ -17,7 +17,9 @@ class: text-center
 drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
-transition: slide-left
+addons:
+  - tldraw
+transition: fade-out
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 ---
@@ -50,11 +52,11 @@ transition: fade-out
 
 Die Fördermittellandschaft für Leipziger Unternehmen ist durch **Intransparenz**, fehlende zentrale Beratung und **komplexe**, **volatile** Ausschreibungen gekennzeichnet.
 
-- 🌫️ Undurchsichtige Fördermittellandschaft für Leipziger Unternehmen
-- 🔍 Keine zentrale Beratungsstelle für Fördermöglichkeiten
-- ⏳ Unregelmäßige und volatile Förderausschreibungen
-- 🏭 Komplexe Anforderungen für verschiedene Branchen
-- 🌐 Mangel an transparenter, digitaler Förderinformation
+- 🌫️ Undurchsichtige Fördermittellandschaft für Leipziger Unternehmen.
+- 🔍 Keine zentrale Beratungsstelle für Fördermöglichkeiten.
+- ⏳ Unregelmäßige und volatile Förderausschreibungen.
+- 🏭 Komplexe Anforderungen für verschiedene Branchen.
+- 🌐 Mangel an transparenter, digitaler Förderinformation.
 
 <!--
 Here is another comment.
@@ -84,6 +86,61 @@ transition: fade-out
 </v-clicks>
 
 ---
+transition: fade-out
+layout: two-cols
+class: relative
+---
+
+# Iteration 1
+
+Aktuellen und hochwertigen Datenbestand erzeugen
+
+- Ein hochwertiger Datenbestand ist die Grundvorraussetzung.
+- Automatisierte Anbindung unterschiedlicher Förderdatenbanken wie bspw. [Förderdatenbank(BMWK)](https://www.foerderdatenbank.de/).
+- Manuelle Pflege der Datenbank durch Mitarbeitende des Amts für Wirtschaftsförderung.
+
+::right::
+
+<tldraw class="inset-0" doc="tldraw/doc-sy_-d0Yjga3U1r1aOTNla.json"></tldraw>
+
+---
+transition: fade-out
+layout: two-cols
+class: relative
+---
+
+# Iteration 2
+
+Fördermöglichkeiten zugänglich machen
+
+- Erarbeitung eines Entscheidungsbaums.
+- Nutzung des Entscheidungsbaums, um passende Förderung zu finden.
+- Hilft dabei Datenlandschaft besser zu kategorisieren.
+- → **Vorbereitung für KI-Einsatz**
+
+::right::
+
+<tldraw class="inset-0" doc="tldraw/doc-VqS_bjfYKBQ8gkoT36mMZ.json"></tldraw>
+
+---
+transition: fade-out
+layout: two-cols
+class: relative
+---
+
+# Iteration 3
+
+Individuelle Beratung durch KI
+
+- Anlernen einer Künstlichen Intelligenz (KI) auf Basis des erzeugten Datenbestands.
+- Bereitstellung eines Chatbots.
+- Durch Eingabe natürlicher Sprache die passende Förderung finden.
+
+::right::
+
+<tldraw class="inset-0" doc="tldraw/doc-k7pK4KJYBoozUcTFGIYwm.json"></tldraw>
+
+---
 layout: center
 class: text-center
 ---
@@ -91,7 +148,7 @@ class: text-center
 # Demo
 
 
-[krey.io](https://krey.io/foerderkompass)
+[krey.io/foerderkompass](https://krey.io/foerderkompass)
 
 ---
 layout: image-right
@@ -122,4 +179,3 @@ class: text-center
 # Vielen Dank
 
 [christian@krey.io](mailto:christian@krey.io)
-

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { BotIcon, DatabaseBackupIcon, GitPullRequestIcon } from "lucide-react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,8 +26,45 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} min-h-svh bg-background`}
+      >
+        <div className="relative flex min-h-svh flex-col">
+          {/* Hero */}
+          <div>
+            <div className="px-6 py-12 max-w-5xl mx-auto border-x border-dashed">
+              <h1 className="text-2xl font-bold leading-tight tracking-tighter sm:text-3xl md:text-4xl lg:leading-[1.1]">
+                Förderkompass
+              </h1>
+              <p className="max-w-2xl text-base font-light text-foreground sm:text-lg">
+                Some sub text.
+              </p>
+            </div>
+          </div>
+          <div className="border-y border-dashed">
+            <nav className="p-6 flex gap-2 max-w-5xl mx-auto border-x border-dashed">
+              <Button asChild variant="outline">
+                <Link href="/">
+                  <DatabaseBackupIcon /> Datenbasis
+                </Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/fragebogen">
+                  <GitPullRequestIcon />
+                  Fragebogen
+                </Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/chat">
+                  <BotIcon /> KI Chart
+                </Link>
+              </Button>
+            </nav>
+          </div>
+          <main className="max-w-5xl w-full mx-auto border-x border-dashed flex-grow">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

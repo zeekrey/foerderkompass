@@ -80,6 +80,9 @@ importers:
       lucide-react:
         specifier: ^0.483.0
         version: 0.483.0(react@19.0.0)
+      nanoid:
+        specifier: ^5.1.5
+        version: 5.1.5
       next:
         specifier: ^15.2.1
         version: 15.2.1(@opentelemetry/api@1.9.0)(@playwright/test@1.51.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -4314,6 +4317,11 @@ packages:
   nanoid@3.3.8:
     resolution: {integrity: sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
+  nanoid@5.1.5:
+    resolution: {integrity: sha512-Ir/+ZpE9fDsNH0hQ3C68uyThDXzYcim2EqcZ8zn8Chtt1iylPT9xXJB0kPCnqzgcEGikO9RxSrh63MsmVCU7Fw==}
+    engines: {node: ^18 || >=20}
     hasBin: true
 
   nanotar@0.2.0:
@@ -10224,6 +10232,8 @@ snapshots:
   muggle-string@0.4.1: {}
 
   nanoid@3.3.8: {}
+
+  nanoid@5.1.5: {}
 
   nanotar@0.2.0: {}
 

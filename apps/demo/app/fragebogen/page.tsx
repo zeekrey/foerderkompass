@@ -2,24 +2,9 @@
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useReducer } from "react";
-import { First, Result, Second, Third } from "./steps";
 import { StepContext } from "./context";
+import { steps } from "./steps";
 
-// Define the base states
-export const steps = [
-  {
-    template: First,
-  },
-  {
-    template: Second,
-  },
-  {
-    template: Third,
-  },
-  {
-    template: Result,
-  },
-];
 
 // Initial state object with additional properties
 const initialState = {

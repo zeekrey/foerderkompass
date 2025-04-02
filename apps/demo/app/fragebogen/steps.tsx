@@ -10,7 +10,6 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { steps } from "./page";
 import { useContext } from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -22,6 +21,22 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+
+// Define the base states
+export const steps = [
+  {
+    template: First,
+  },
+  {
+    template: Second,
+  },
+  {
+    template: Third,
+  },
+  {
+    template: Result,
+  },
+];
 
 export function useStepContext() {
   const ctx = useContext(StepContext);

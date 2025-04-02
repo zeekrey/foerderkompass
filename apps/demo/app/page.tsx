@@ -36,7 +36,7 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import data from "../content/data.json";
 
-export type Payment = {
+type Payment = {
   name: string;
   description: string;
   href: string;
@@ -45,7 +45,7 @@ export type Payment = {
   responsible: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
   {
     id: "select",
     header: ({ table }) => (

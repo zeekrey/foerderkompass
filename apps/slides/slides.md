@@ -1,6 +1,6 @@
 ---
 # You can also start simply with 'default'
-theme: seriph
+theme: ./theme
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
@@ -22,6 +22,10 @@ addons:
 transition: fade-out
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
+fonts:
+  sans: 'Geist:400,600'
+  serif: 'Merriweather:400,700i'
+  mono: 'Fira Code:400,600'
 ---
 
 # Förderkompass
@@ -46,6 +50,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 transition: fade-out
+layout: default
 ---
 
 # Herausforderung
@@ -64,6 +69,7 @@ Here is another comment.
 
 ---
 transition: fade-out
+layout: default
 ---
 
 # Lösung
@@ -148,7 +154,46 @@ class: text-center
 # Demo
 
 
-[krey.io/foerderkompass](https://krey.io/foerderkompass)
+[supa.works/foerderkompass](https://supa.works/foerderkompass)
+
+
+---
+transition: fade-out
+layout: default
+---
+
+# Zeitplan
+
+Start der 1. Iteration ist während der **Weiterentwicklungsphase**. Ziel ist eine homogene Datenlandschaft zu schaffen auf Basis der von Ihnen genannten Quellen.
+
+
+<ul class="list-none flex border border-zinc-300 rounded-lg divide-zinc-300 divide-x space-x-4">
+  <li class="list-none flex-1/4 p-0 py-2 m-0">
+    <strong class="block">Iteration 1</strong>
+    <span class="text-sm">Weiterentwicklungsphase (2 Monate)</span>
+    </li>
+  <li class="list-none flex-2/4 p-0 py-2 m-0">
+    <strong class="block">Iteration 2</strong>
+    <span class="text-sm">Umsetzungsphase (3 Monate)</span>
+  </li>
+  <li class="list-none flex-1/4 p-0 py-2 m-0">
+    <strong class="block">Iteration 3</strong>
+    <span class="text-sm">Umsetzungsphase (2 Monate)</span>
+  </li>
+</ul>
+
+<!-- - **Iteration 1 - Aktuellen und hochwertigen Datenbestand erzeugen**
+  - Anbindung vieler Quellen von Förderinformationen.
+  - Harmonisierung der Datenlandschaft.
+  - Pflegemöglichkeit durch Mitarbeitende des Amts für Wirtschaftsförderung.
+- **Iteration 2 - Fördermöglichkeiten zugänglich machen**
+  - Erarbeitung eines Entscheidungsbaums.
+  - Nutzung des Entscheidungsbaums, um passende Förderung zu finden.
+- **Iteration 3 - Individuelle Beratung durch KI**
+  - Bereitstellung eines Chatbots.
+  - Durch Eingabe natürlicher Sprache die passende Förderung finden. -->
+
+
 
 ---
 layout: image-right
@@ -166,7 +211,7 @@ image: /buergergeld-screenshot.jpg
 
 <div class="abs-b pl-16">
 
-  [Website](https://super.works) · [GitHub](https://github.com/zeekrey) · [Buergergeld.io](https://www.buergergeld.io/)
+  [Website](https://supa.works) · [GitHub](https://github.com/zeekrey) · [Buergergeld.io](https://www.buergergeld.io/)
 
 </div>
 

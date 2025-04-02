@@ -98,8 +98,8 @@
       "typeName": "binding"
     },
     "shape:IlZ1QptVPql4G7RufWrX4": {
-      "x": 483.2183146214629,
-      "y": 447.31642932283205,
+      "x": 428.0408360412916,
+      "y": 454.87089688709153,
       "rotation": 0,
       "isLocked": false,
       "opacity": 1,
@@ -113,7 +113,7 @@
         "font": "draw",
         "textAlign": "start",
         "autoSize": true,
-        "scale": 1,
+        "scale": 1.6738066095471247,
         "richText": {
           "type": "doc",
           "content": [
@@ -244,8 +244,8 @@
       "typeName": "shape"
     },
     "shape:zKrwfylZkLA3-WtHIsx_g": {
-      "x": 79.32826779495963,
-      "y": 551.6080301592525,
+      "x": 85.48738652200979,
+      "y": 547.661885728408,
       "rotation": 0,
       "isLocked": false,
       "opacity": 1,

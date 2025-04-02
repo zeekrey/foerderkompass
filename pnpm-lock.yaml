@@ -77,6 +77,9 @@ importers:
       drizzle-zod:
         specifier: ^0.7.0
         version: 0.7.0(drizzle-orm@0.40.1(@neondatabase/serverless@0.10.4)(@opentelemetry/api@1.9.0)(@types/pg@8.11.6)(gel@2.0.1))(zod@3.24.2)
+      jiti:
+        specifier: ^2.4.2
+        version: 2.4.2
       lucide-react:
         specifier: ^0.483.0
         version: 0.483.0(react@19.0.0)

@@ -36,8 +36,11 @@ export default function RootLayout({
               <h1 className="text-2xl font-bold leading-tight tracking-tighter sm:text-3xl md:text-4xl lg:leading-[1.1]">
                 Förderkompass
               </h1>
-              <p className="max-w-2xl text-base font-light text-foreground sm:text-lg">
-                Some sub text.
+              <p className="text-base font-light text-foreground sm:text-lg pt-2">
+                Fördermöglichkeiten sollen sichtbar und nutzbar gemacht werden.
+                Daher wird im ersten Schritt automatisiert eine einheitliche
+                Datenbasis aus verschiedenen Quellen erstellt, die anschließend
+                von Unternehmen und Vereinen genutzt werden kann.
               </p>
             </div>
           </div>
@@ -56,7 +59,7 @@ export default function RootLayout({
               </Button>
               <Button asChild variant="outline">
                 <Link href="/chat">
-                  <BotIcon /> KI Chart
+                  <BotIcon /> KI Chat
                 </Link>
               </Button>
             </nav>

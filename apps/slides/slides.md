@@ -157,6 +157,7 @@ image: /buergergeld-screenshot.jpg
 
 # Über mich
 
+- 💼 Neugründung: Supa
 - 👨🏻‍🍳 Christian Krey, 35 Jahre
 - 👨🏼‍💻 Software Entwickler aus Leipzig
 - 🎖️ Gewinner der Smart City Challenge 2024
@@ -165,7 +166,7 @@ image: /buergergeld-screenshot.jpg
 
 <div class="abs-b pl-16">
 
-  [Website](https://krey.io) · [GitHub](https://github.com/zeekrey) · [Buergergeld.io](https://www.buergergeld.io/)
+  [Website](https://super.works) · [GitHub](https://github.com/zeekrey) · [Buergergeld.io](https://www.buergergeld.io/)
 
 </div>
 

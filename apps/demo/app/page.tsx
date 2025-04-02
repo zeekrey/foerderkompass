@@ -13,8 +13,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
-
+import { ChevronDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -23,7 +22,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
@@ -35,45 +33,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
-const data: Payment[] = [
-  {
-    id: "m5gr84i9",
-    amount: 316,
-    status: "success",
-    email: "ken99@example.com",
-  },
-  {
-    id: "3u1reuv4",
-    amount: 242,
-    status: "success",
-    email: "Abe45@example.com",
-  },
-  {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
-  },
-  {
-    id: "5kma53ae",
-    amount: 874,
-    status: "success",
-    email: "Silas22@example.com",
-  },
-  {
-    id: "bhqecj4p",
-    amount: 721,
-    status: "failed",
-    email: "carmella@example.com",
-  },
-];
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import data from "../content/data.json";
 
 export type Payment = {
-  id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
+  name: string;
+  description: string;
+  href: string;
+  type: string;
+  purpose: string;
+  responsible: string;
 };
 
 export const columns: ColumnDef<Payment>[] = [
@@ -100,48 +69,30 @@ export const columns: ColumnDef<Payment>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "status",
-    header: "Status",
+    accessorKey: "name",
+    header: "Name",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
+      <div className="max-w-72 truncate">{row.getValue("name")}</div>
     ),
   },
   {
-    accessorKey: "email",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Email
-          <ArrowUpDown />
-        </Button>
-      );
-    },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
+    accessorKey: "description",
+    header: "Beschreibung",
+    cell: ({ row }) => (
+      <div className="max-w-52 truncate">{row.getValue("description")}</div>
+    ),
   },
   {
-    accessorKey: "amount",
-    header: () => <div className="text-right">Amount</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
+    accessorKey: "type",
+    header: "Typ",
+    cell: ({ row }) => (
+      <div className="max-w-52 truncate">{row.getValue("type")}</div>
+    ),
   },
   {
     id: "actions",
     enableHiding: false,
-    cell: ({ row }) => {
-      const payment = row.original;
-
+    cell: () => {
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -151,15 +102,8 @@ export const columns: ColumnDef<Payment>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuLabel>Aktionen</DropdownMenuLabel>
+            <DropdownMenuItem>Öffnen</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
@@ -196,20 +140,36 @@ export default function DataTableDemo() {
   });
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 space-y-3">
+      <Alert className="bg-muted/50">
+        <AlertTitle>Demo Hinweis</AlertTitle>
+        <AlertDescription>
+          <p>
+            Zu Demonstrationszwecken wurden die Daten von dem
+            <a
+              className="mx-1 underline underline-offset-2"
+              href="https://www.leipzig.de/buergerservice-und-verwaltung/aemter-und-behoerdengaenge/foerdermittelfinder"
+            >
+              Fördermittelfinder der Stadt Leipzig
+            </a>
+            analysiert. Die Daten werden automatisiert, alle 24Stunden abgerufen
+            und kategorisiert.
+          </p>
+        </AlertDescription>
+      </Alert>
       <div className="flex items-center pb-4">
         <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+          placeholder="Filter ..."
+          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("name")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
-              Columns <ChevronDown />
+              Spalten <ChevronDown />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -276,7 +236,7 @@ export default function DataTableDemo() {
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No results.
+                  Keine Ergebnisse.
                 </TableCell>
               </TableRow>
             )}
@@ -286,7 +246,7 @@ export default function DataTableDemo() {
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="flex-1 text-sm text-muted-foreground">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
+          {table.getFilteredRowModel().rows.length} Zeile(n) selektiert.
         </div>
         <div className="space-x-2">
           <Button
@@ -295,7 +255,7 @@ export default function DataTableDemo() {
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
-            Previous
+            Zurück
           </Button>
           <Button
             variant="outline"
@@ -303,7 +263,7 @@ export default function DataTableDemo() {
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
-            Next
+            Weiter
           </Button>
         </div>
       </div>

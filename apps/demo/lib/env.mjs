@@ -1,8 +1,6 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
-import dotenv from "dotenv";
-
-dotenv.config({path: new URL('../.env.development.local', import.meta.url).pathname })
+import "dotenv/config";
 
 export const env = createEnv({
   server: {
@@ -10,7 +8,7 @@ export const env = createEnv({
       .enum(["development", "test", "production"])
       .default("development"),
     DATABASE_URL: z.string().min(1),
-    
+
   },
   client: {
     // NEXT_PUBLIC_PUBLISHABLE_KEY: z.string().min(1),

@@ -1,4 +1,5 @@
 import { createEnv } from "@t3-oss/env-nextjs";
+import { vercel, neonVercel } from "@t3-oss/env-core/presets-zod";
 import { z } from "zod";
 import "dotenv/config";
 
@@ -21,4 +22,8 @@ export const env = createEnv({
   experimental__runtimeEnv: {
     // NEXT_PUBLIC_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_PUBLISHABLE_KEY,
   },
+  extends: [
+    vercel(),
+    neonVercel()
+  ]
 });

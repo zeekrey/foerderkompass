@@ -52,6 +52,11 @@
     color: inherit;
     @apply text-6xl leading-20;
   }
+
+
+  h1 + p {
+    @apply text-zinc-300/80;
+  }
 }
 
 .slidev-layout.fact {

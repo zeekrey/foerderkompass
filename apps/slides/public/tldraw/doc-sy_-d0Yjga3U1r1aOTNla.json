@@ -129,8 +129,8 @@
       "typeName": "shape"
     },
     "shape:uMesLMtxTuFiOixpoXkaD": {
-      "x": 316.04446605843583,
-      "y": 53.3413268039678,
+      "x": 315.7164366826708,
+      "y": 38.93251407446963,
       "rotation": 0.017453292519943295,
       "isLocked": false,
       "opacity": 1,
@@ -144,7 +144,7 @@
         "font": "draw",
         "textAlign": "start",
         "autoSize": true,
-        "scale": 2.120444278987385,
+        "scale": 2.479279697059517,
         "richText": {
           "type": "doc",
           "content": [

@@ -22,6 +22,7 @@ addons:
 transition: fade-out
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
+colorSchema: light
 fonts:
   sans: 'Geist:400,600'
   serif: 'Merriweather:400,700i'
@@ -30,10 +31,11 @@ fonts:
 
 # Förderkompass
 
+<p class="text-zinc-100">
 Wegweiser für Leipziger Unternehmen und Vereine
 <br>
 Smart City Challenge 2025
-
+</p>
 <!-- <div @click="$slidev.nav.next" class="mt-12 py-1">
   Press Space for next page <carbon:arrow-right />
 </div> -->
